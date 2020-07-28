@@ -1,0 +1,59 @@
+<html>
+	<head>
+
+	</head>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+	<body>
+		<div class="container">
+			<input class="numinput" type="text" id="num1">
+			<input  class="numinput" type="text" id="num2">
+			<br><br>
+			<input class="input" type="button" value="Calculate" onclick="calculate()">
+			<input class="input" type="reset" value="Clear" onclick="clearall()">
+			<br>
+			<br>
+			<div class="answer">
+				<p>Result</p>
+				<span id="plus"></span>
+				<br>
+				<span id="minu"></span>
+				<br>
+				<span id="mult"></span>
+				<br>
+				<span id="divi"></span>
+				<br>
+				<span id="rem"></span>
+			</div>
+		</div>		
+	</body>
+	<script>
+		function calculate(){
+
+			var number1=document.getElementById("num1").value;
+			var number2=document.getElementById("num2").value;
+
+			var plusre=parseInt(number1) + parseInt(number2);
+			var minure=number1 - number2;
+			var mulre=number1 * number2;
+			var divire=number1 / number2;
+			var remre=number1 % number2;
+
+			document.getElementById("plus").innerHTML=num1.value+"+"+num2.value+"="+plusre;
+			document.getElementById("minu").innerHTML=num1.value+"-"+num2.value+"="+minure;
+			document.getElementById("mult").innerHTML=num1.value+"*"+num2.value+"="+mulre;
+			document.getElementById("divi").innerHTML=num1.value+"/"+num2.value+"="+divire;
+			document.getElementById("rem").innerHTML=num1.value+"%"+num2.value+"="+remre;
+
+		}
+		function clearall(){
+			document.getElementById("num1").value="";
+			document.getElementById("num2").value="";
+
+			document.getElementById("plus").innerHTML="0";
+			document.getElementById("minu").innerHTML="0";
+			document.getElementById("mult").innerHTML="0";
+			document.getElementById("divi").innerHTML="0";
+			document.getElementById("rem").innerHTML="0";
+		}
+	</script>
+</html>
